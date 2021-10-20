@@ -15,9 +15,9 @@ function createGameBoard()
     // Programatically add a button with square brackets enclosing an empty space to each cell in the gameboard
    
     let cells = document.querySelectorAll("td");
-    let squareBrackets = `<button id='edit-btn'>[]</button>`;
+    let squareBrackets = `<button id='edit-btn'>[ ]</button>`;
 
-    for (let i=0; i < cells.length; i++){
+    for (let i = 0; i < cells.length; i++) {
         cells[i].innerHTML = squareBrackets;
     }
 }
@@ -39,6 +39,7 @@ function takeCell(event)
     // Make sure the button is clickable only once (I didn't mention how to do that, look it up :) )
 
     let clickedButton = event.target;
+    
     if (clickedButton.innerText === "[ ]"){
 
         if (nextPlayer === 'X'){
