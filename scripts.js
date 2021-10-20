@@ -39,16 +39,16 @@ function takeCell(event)
     // Make sure the button is clickable only once (I didn't mention how to do that, look it up :) )
 
     let clickedButton = event.target;
-    if (clickedButton.innerText === "[]"){
+    if (clickedButton.innerText === "[ ]"){
 
         if (nextPlayer === 'X'){
             clickedButton.innerText = "[" + nextPlayer + "]";
-            nextPlayer = "0";
+            nextPlayer = "O";
             clickedButton.disabled = true;
             nextPlayerLabel.innerHTML = nextPlayer;
         }
 
-        else if (nextPlayer === "O"){
+        else if (nextPlayer === 'O'){
             clickedButton.innerText = "[" + nextPlayer + "]";
             nextPlayer = "X";
             clickedButton.disabled = true;
@@ -60,7 +60,7 @@ function takeCell(event)
     if (isGameOver())
     {
         // let the lable with the id 'game-over-lbl' display the words 'Game Over' inside <h1> element
-        let gameOverlabel = document.querySelector("#hame-over-lbl");
+        let gameOverlabel = document.querySelector("#game-over-lbl");
         gameOverlabel.innerHTML = `<h1>Game Over</h1>`;
     }
 
